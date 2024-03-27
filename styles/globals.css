@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-resize-handle-right {
+    right: 0;
+    transform: translateX(50%);
+}
+
+.custom-resize-handle-left {
+    left: 0;
+    transform: translateX(-50%);
+}
