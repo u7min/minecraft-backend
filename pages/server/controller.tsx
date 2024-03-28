@@ -70,10 +70,6 @@ const Controller: NextPage = () => {
     }
   };
 
-  console.log(
-    'loading',
-    serverInfo?.data?.service?.players.map((p) => p.name_clean),
-  );
   return (
     <div
       className={`w-full flex flex-row justify-between h-screen text-green-500 ${loading ? 'opacity-50' : 'bg-black'} text-sm`}

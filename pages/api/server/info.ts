@@ -7,6 +7,7 @@ const projectId = process.env.GCP_PROJECT_ID;
 const zone = process.env.GCP_ZONE;
 const keyFile = process.env.GCP_KEY;
 const instance = process.env.MINE_SERVER_NAME;
+const onGcp = process.env.ON_GCP;
 
 export interface McStatusResponse {
   online: boolean;
@@ -25,7 +26,10 @@ export interface ServiceResponse {
 }
 
 async function handler(req: NextApiRequest, res: NextApiResponse<ResponseType>) {
-  const computeClient = new Compute.v1.InstancesClient({ projectId, keyFile });
+  const computeClient =
+    onGcp === 'true'
+      ? new Compute.v1.InstancesClient()
+      : new Compute.v1.InstancesClient({ projectId, keyFile });
   const response = await computeClient.get({ project: projectId, zone, instance });
   const status = response?.[0].status;
   const networkInterfaces = response?.[0].networkInterfaces;
