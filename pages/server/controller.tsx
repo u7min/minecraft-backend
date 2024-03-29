@@ -75,15 +75,16 @@ const Controller: NextPage = () => {
       <div className="text-white"></div>
       <div className={`p-5 max-w-xl w-full h-full`}>
         <div className="flex flex-col space-y-2 h-full">
-          {error && <div className="h-8 text-xs">{error}</div>}
-          <div className="h-8 text-xs">{loading ? 'Loading... ' : message}</div>
+          {error && <div className="h-8 text-xs text-red-500">{error}</div>}
           <div className="h-full w-full text-center flex flex-row justify-between">
             <div></div>
             <div className="relative max-w-sm py-5">
               <Image src={minecraft} className={`rounded-full ${loading && 'opacity-50'}`} />
               {loading && (
                 <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-                  <p className="text-lg font-semibold text-white">Loading...</p>
+                  <p className="text-lg font-semibold text-white">
+                    {loading ? 'Loading... ' : message}
+                  </p>
                 </div>
               )}
             </div>
