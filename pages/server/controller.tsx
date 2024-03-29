@@ -71,9 +71,7 @@ const Controller: NextPage = () => {
   };
 
   return (
-    <div
-      className={`w-full flex flex-row justify-between h-screen text-green-500 ${loading ? 'opacity-50' : 'bg-black'} text-sm`}
-    >
+    <div className={`w-full flex flex-row justify-between h-screen text-green-500 text-sm py-5`}>
       <div className="text-white"></div>
       <div className={`p-5 max-w-xl w-full h-full`}>
         <div className="flex flex-col space-y-2 h-full">
@@ -81,8 +79,13 @@ const Controller: NextPage = () => {
           <div className="h-8 text-xs">{loading ? 'Loading... ' : message}</div>
           <div className="h-full w-full text-center flex flex-row justify-between">
             <div></div>
-            <div className="max-w-sm py-5">
-              <Image src={minecraft} className="rounded-full" />
+            <div className="relative max-w-sm py-5">
+              <Image src={minecraft} className={`rounded-full ${loading && 'opacity-50'}`} />
+              {loading && (
+                <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+                  <p className="text-lg font-semibold text-white">Loading...</p>
+                </div>
+              )}
             </div>
             <div></div>
           </div>
