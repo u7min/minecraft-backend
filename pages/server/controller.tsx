@@ -81,12 +81,12 @@ const Controller: NextPage = () => {
           <div className="h-8 text-xs">{loading ? 'Loading... ' : message}</div>
           <div className="h-full w-full text-center flex flex-row justify-between">
             <div></div>
-            <div className="max-w-sm py-3">
+            <div className="max-w-sm py-5">
               <Image src={minecraft} className="rounded-full" />
             </div>
             <div></div>
           </div>
-          <div className="border border-green-500 h-14 p-2 text-center flex flex-col justify-between">
+          <div className="border border-green-500 h-8 p-1 text-center flex flex-col justify-between">
             <div></div>
             <div>
               {serverInfo?.data?.status
@@ -97,7 +97,7 @@ const Controller: NextPage = () => {
             </div>
             <div></div>
           </div>
-          <div className="border border-green-500 h-14 p-2 text-center flex flex-col justify-between">
+          <div className="border border-green-500 h-8 p-1 text-center flex flex-col justify-between">
             <div></div>
             <div>
               {serverInfo?.data?.service?.online ? (
@@ -110,7 +110,7 @@ const Controller: NextPage = () => {
             </div>
             <div></div>
           </div>
-          <div className="border border-green-500 h-14 p-2 text-center flex flex-col justify-between">
+          <div className="border border-green-500 h-8 p-1 text-center flex flex-col justify-between">
             <div></div>
             <div className="uppercase">
               {serverInfo?.data?.service?.name ? (
@@ -123,7 +123,7 @@ const Controller: NextPage = () => {
             </div>
             <div></div>
           </div>
-          <div className="border border-green-500 h-14 p-2 text-center flex flex-col justify-between">
+          <div className="border border-green-500 h-8 p-1 text-center flex flex-col justify-between">
             <div></div>
             <div className="uppercase">
               {serverInfo?.data?.service?.players?.length ? (
@@ -142,7 +142,7 @@ const Controller: NextPage = () => {
             <div></div>
           </div>
           <div
-            className={`border border-green-500 h-14 p-2 text-center flex flex-col justify-between  ${serverInfo?.data?.ip && 'cursor-pointer hover:bg-green-500 hover:text-black'}`}
+            className={`border border-green-500 h-8 p-1 text-center flex flex-col justify-between  ${serverInfo?.data?.ip && 'cursor-pointer hover:bg-green-500 hover:text-black'}`}
             onClick={handleCopyClipBoard}
           >
             <div></div>
@@ -157,9 +157,9 @@ const Controller: NextPage = () => {
             </div>
             <div></div>
           </div>
-          <div className="flex flex-row space-x-2 h-14">
+          <div className="flex flex-row space-x-2 h-8">
             <div
-              className={`border border-green-500 w-1/2 p-2 text-center flex flex-col justify-between ${!canStart ? 'disabled cursor-not-allowed text-green-800 ring' : 'cursor-pointer hover:bg-green-500 hover:text-black'}`}
+              className={`border border-green-500 w-1/2 p-1 text-center flex flex-col justify-between ${!canStart ? 'disabled cursor-not-allowed text-green-800 ring' : 'cursor-pointer hover:bg-green-500 hover:text-black'}`}
               onClick={!canStart ? undefined : handleStart}
             >
               <div></div>
@@ -167,7 +167,7 @@ const Controller: NextPage = () => {
               <div></div>
             </div>
             <div
-              className={`border border-green-400 w-1/2 p-2 text-center flex flex-col justify-between ${!canStop ? 'disabled cursor-not-allowed text-green-800 ring' : 'cursor-pointer hover:bg-red-400 hover:text-black'}`}
+              className={`border border-green-400 w-1/2 p-1 text-center flex flex-col justify-between ${!canStop ? 'disabled cursor-not-allowed text-green-800 ring' : 'cursor-pointer hover:bg-red-400 hover:text-black'}`}
               onClick={!canStop ? undefined : handleStop}
             >
               <div></div>
