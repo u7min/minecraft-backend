@@ -56,10 +56,12 @@ const Controller: NextPage = () => {
 
   const handleStart = () => {
     start(null);
+    setLoading(true);
     setMessage('Start Requested. Please wait...');
   };
   const handleStop = () => {
     stop(null);
+    setLoading(true);
     setMessage('Stop Requested. Please wait...');
   };
 
